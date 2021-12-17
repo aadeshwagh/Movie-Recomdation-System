@@ -37,7 +37,7 @@ public class User {
             }
             bf.close();
         } catch (Exception e) {
-            throw new Error("exception in User class setmovierating method");
+            e.getCause();
         }
 
     }
@@ -61,10 +61,10 @@ public class User {
         return user_id + 1;
     }
 
-    void GiveRating(User a, Movie m, double rating) {
+    void GiveRating(User a, Movie m, int rating) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(new File("ratings.csv"), true));
-            bw.append(a.getId() + "," + m.getId() + "," + rating);
+            bw.append(a.getId() + "," + m.getId() + "," + rating + "\n");
             bw.flush();
             bw.close();
 

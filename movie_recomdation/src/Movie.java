@@ -104,4 +104,24 @@ public class Movie {
         return uncommonmovies;
     }
 
+    public int getMDbRatingvector(int movie_id) {
+        try {
+            br = new BufferedReader(new FileReader("links.csv"));
+            String line = br.readLine();
+            while ((line = br.readLine()) != null) {
+                String arr[] = line.split(",");
+                if (movie_id == Integer.parseInt(arr[0])) {
+                    return Integer.parseInt(arr[2]);
+                }
+            }
+            br.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.getMessage();
+        }
+
+        return -1;
+
+    }
+
 }

@@ -3,6 +3,7 @@ import java.util.*;
 
 public class similarUsers {
     BufferedReader bf;
+    int x = 0;
 
     public double[] getSimilarityMatrix() {
         return similarityMatrix;
@@ -89,8 +90,28 @@ public class similarUsers {
 
     }
 
+    void size() {
+        Set<Integer> set = new HashSet<>();
+
+        try {
+            bf = new BufferedReader(new FileReader(new File(("ratings.csv"))));
+            String line = bf.readLine();
+            while ((line = bf.readLine()) != null) {
+                String arr[] = line.split(",");
+                set.add(Integer.parseInt(arr[0]));
+            }
+            bf.close();
+        } catch (Exception e) {
+            e.getCause();
+        }
+
+        x = set.size();
+        System.out.println(x);
+    }
+
     public void CreateuserRatingmatrix() {
-        userRatingMatrix = new double[611][193610];
+        size();
+        userRatingMatrix = new double[x + 1][193610];
         try {
             bf = new BufferedReader(new FileReader(new File(("ratings.csv"))));
             String line = bf.readLine();
@@ -100,7 +121,7 @@ public class similarUsers {
             }
             bf.close();
         } catch (Exception e) {
-            throw new Error("exception in Similaruser class createuserratings method");
+            e.getCause();
         }
 
     }
