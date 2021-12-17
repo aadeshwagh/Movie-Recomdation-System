@@ -1,10 +1,19 @@
 # Movie Recommendation System
 
-## Machine learning methed used:
-## User-user Collaborative Filtering
+## Machine learning methed used: User-user Collaborative Filtering
 ## Filtering criteria : pearson-corelation
+## Features:
 
+<b>Registered user recommendations<br>
+<b>New user Recommendations<br>
+<b>Genre Based Recommendations<br>
+
+<img src = "images/movie_rs6.PNG">
 <img src = "images/movie_rs1.PNG">
+<img src = "images/movie_rs2.PNG">
+<img src = "images/movie_rs3.PNG">
+<img src = "images/movie_rs4.PNG">
+<img src = "images/movie_rs5.PNG">
 
 ## Data Set Summary
 =======
